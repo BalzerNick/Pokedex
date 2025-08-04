@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./standart.css">
+    <link rel="stylesheet" href="./styles/types.css">
+    <link rel="stylesheet" href="./styles/pokemonCardBig.css">
+    <link rel="stylesheet" href="./styles/pokemonCardLittle.css">
+
+    <!-- Templates -->
+    <link rel="Scripts" href="./templates/bigCardTemplate.js">
+    <link rel="Scripts" href="./templates/littleCardTemplate.js">
+
+    <!-- Scripts -->
+    <link rel="Scripts" href="./main.js">
+    <link rel="Scripts" href="./scripts/bigCard.js">
+    <link rel="Scripts" href="./scripts/littleCard.js">
 </head>
-<body>
+<body onload="init()">
     <header>
         <img src="" alt="">
         <div id="searchbar">
@@ -14,7 +29,12 @@
     </header>
 
     <main>
+        <div id="cards_litte">
 
+        </div>
+        <div id="cards_big">
+
+        </div>
     </main>
 
     <footer>
