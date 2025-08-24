@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./styles/pokemonCardSmall.css">
 
     <!-- Templates -->
-    <link rel="Scripts" href="./templates/bigCardTemplate.js">
-    <link rel="Scripts" href="./templates/littleCardTemplate.js">
+    <script src="./templates/bigCardTemplate.js"></script>
+    <script src="./templates/smallCardTemplate.js"></script>
 
     <!-- Scripts -->
     <script src="./main.js"></script>
@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <div class="content" id="content">
         <header>
             <img src="" alt="">
@@ -34,23 +34,11 @@
         </header>
 
         <main>
-            <div id="small_card_container" class="smallCardContainer" onclick="toggleOverlay()">
-                <div class="cardSmall" id="small_card">
-                    <div id="small_card_top" class="smallTop">
-                        <div id="number_small" class="numberSmall">1#</div>
-                        <div id="name_small" class="nameSmall">Bulbasur</div>
-                    </div>
-                    <div id="small_card_middle" class="smallMiddle bug">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="">
-                    </div>
-                    <div id="small_card_bottom" class="smallBottom">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/12.png" alt="">
-                                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/4.png" alt="">
-                    </div>
-                </div>
+            <div id="small_card_container" class="smallCardContainer" >
+
             </div>
         </main>
-
+                     
         <overlay id="dialog" onclick="visibilityDialog(-1,'isVisible')" class="dNone">
             <div id="dialogCard" class="dialog" onclick="noEvent(event)">
 

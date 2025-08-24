@@ -1,5 +1,6 @@
 function init() {
-
+    let url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
+    getPokemon(url);
 }
 
 function visibilityDialog(index, status) {
