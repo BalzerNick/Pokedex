@@ -5,6 +5,8 @@ function renderLittleCard(pokemon){
         smallContainer.innerHTML += getSmallCardTemplate(pokemon[index]);
         renderTypeSmall(pokemon[index].Type,pokemon[index].ID );
     }
+
+   
 }
 
 function renderTypeSmall(types, id){
