@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,36 +10,50 @@
     <link rel="stylesheet" href="./standart.css">
     <link rel="stylesheet" href="./styles/types.css">
     <link rel="stylesheet" href="./styles/pokemonCardBig.css">
-    <link rel="stylesheet" href="./styles/pokemonCardLittle.css">
+    <link rel="stylesheet" href="./styles/pokemonCardSmall.css">
 
     <!-- Templates -->
     <link rel="Scripts" href="./templates/bigCardTemplate.js">
     <link rel="Scripts" href="./templates/littleCardTemplate.js">
 
     <!-- Scripts -->
-    <link rel="Scripts" href="./main.js">
-    <link rel="Scripts" href="./scripts/bigCard.js">
-    <link rel="Scripts" href="./scripts/littleCard.js">
+    <script src="./main.js"></script>
+    <script src="./scripts/api.js"></script>
+    <script src="./scripts/bigCard.js"></script>
+    <script src="./scripts/littleCard.js"></script>
+
 </head>
-<body onload="init()">
-    <header>
-        <img src="" alt="">
-        <div id="searchbar">
 
-        </div>
-    </header>
+<body>
+    <div class="content" id="content">
+        <header>
+            <img src="" alt="">
+            <div id="searchbar">
 
-    <main>
-        <div id="cards_litte">
+            </div>
+        </header>
 
-        </div>
-        <div id="cards_big">
+        <main>
+            <div id="small_card_container" onclick="toggleOverlay()">
+                <div class="cardSmall bug" id="small_card">
 
-        </div>
-    </main>
+                </div>
+            </div>
+        </main>
 
-    <footer>
-        
-    </footer>
+        <overlay id="dialog" onclick="visibilityDialog(-1,'isVisible')" class="dNone">
+            <div id="dialogCard" class="dialog" onclick="noEvent(event)">
+
+            </div>
+        </overlay>
+
+        <footer>
+
+        </footer>
+    </div>
+
+
+
 </body>
+
 </html>

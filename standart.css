@@ -1,14 +1,35 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #06151d;
     scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
 }
 
 header{
-    background-color: black;
+    background-color: #082029;
+    height: 100px;
 }
 
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: calc(100vh - 200px);
+}
+
+
 footer{
-    background-color: black;
+    background-color: #082029;
+    height: 100px;
+}
+
+.dNone{
+    display: none;
 }

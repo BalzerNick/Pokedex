@@ -1,0 +1,8 @@
+.cardSmall{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    height: 100px;
+    width: 50px;
+    background-color: #082029;
+}
