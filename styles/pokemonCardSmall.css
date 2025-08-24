@@ -1,8 +1,57 @@
+.smallCardContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
 .cardSmall{
+    margin: 30px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    height: 100px;
-    width: 50px;
+    height: 300px;
+    width: 225px;
     background-color: #082029;
+}
+
+.smallTop{
+    display: flex;
+    color: white;
+    height: 30px;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.numberSmall{
+    justify-content: flex-start;
+}
+
+.nameSmall{
+    margin: auto;
+}
+
+.smallMiddle{
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.smallMiddle img{
+    height: 150px;
+    width: 150px;
+}
+
+.smallBottom{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallBottom img{
+    height: 20px;
+    width: auto;
+    padding: 5px;
 }
