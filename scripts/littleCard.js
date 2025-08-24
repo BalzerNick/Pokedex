@@ -2,8 +2,10 @@ function renderLittleCard(pokemon){
     const smallContainer = document.getElementById("small_card_container");
     smallContainer.innerHTML = "";
     for (let index = 0; index < pokemon.length; index++) {
-        smallContainer.innerHTML += getSmallCardTemplate(pokemon[index]);
+        smallContainer.innerHTML += getSmallCardTemplate(pokemon[index], pokemon[index].Type[0].TypeName);
         renderTypeSmall(pokemon[index].Type,pokemon[index].ID );
+  
+        
     }
 
    
