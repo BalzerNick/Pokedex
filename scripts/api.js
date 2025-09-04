@@ -3,15 +3,14 @@ let pokeArray = [];
 async function getPokemon(url){
     let response = await fetch(url);
     let toJson = await response.json();
-    //console.log(toJson.results);
     
     makePokeArray(toJson.results);
 }
 
+
 async function getPokemonInformations(url){
     let response = await fetch(url);
     let toJson = await response.json();
-    //console.log(toJson);
     
     let pokeData = {
         "PNG": toJson.sprites.other["official-artwork"].front_default,
@@ -58,6 +57,5 @@ async function makePokeArray(pokeList){
         pokeArray.push(Pokemon);
     }
     renderLittleCard(pokeArray)
-    console.log(pokeArray);
-    
+    console.log(pokeArray); 
 }

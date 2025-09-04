@@ -15,3 +15,9 @@ function noEvent(event){
     event.stopPropagation();
 }
 
+
+function morePokemon(){
+    let amount = pokeArray.length;
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${amount}`;
+    getPokemon(url);
+}
