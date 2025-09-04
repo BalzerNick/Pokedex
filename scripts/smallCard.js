@@ -1,4 +1,4 @@
-function renderLittleCard(pokemon){
+function renderSmallCard(pokemon){
     const smallContainer = document.getElementById("small_card_container");
     smallContainer.innerHTML = "";
     for (let index = 0; index < pokemon.length; index++) {

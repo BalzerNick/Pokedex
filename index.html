@@ -20,26 +20,29 @@
     <script src="./main.js"></script>
     <script src="./scripts/api.js"></script>
     <script src="./scripts/bigCard.js"></script>
-    <script src="./scripts/littleCard.js"></script>
+    <script src="./scripts/smallCard.js"></script>
 
 </head>
 
 <body onload="init()">
     <div class="content" id="content">
-        <header>
+        <header class="secondaryBackground">
             <img src="" alt="">
             <div id="searchbar">
 
             </div>
         </header>
 
-        <main>
+        <main class="primaryBackground">
             <div class="mainContainer">
                 <div id="small_card_container" class="smallCardContainer">
         
                 </div>
-                <button class="litteCardButtom" onclick="morePokemon()">Mehr laden</button>
-            </div>
+                <div class="smallCardButtonContainer">
+                      <button class="smallCardButton secondaryBackground" onclick="morePokemon()">Load more Pokemon</button>
+                </div>
+                </div>
+              
         
         </main>
         <overlay id="dialog" onclick="visibilityDialog(-1,'isVisible')" class="dNone">
@@ -48,7 +51,7 @@
             </div>
         </overlay>
 
-        <footer>
+        <footer class="secondaryBackground">
 
         </footer>
     </div>

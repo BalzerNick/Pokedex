@@ -56,6 +56,5 @@ async function makePokeArray(pokeList){
         }
         pokeArray.push(Pokemon);
     }
-    renderLittleCard(pokeArray)
-    console.log(pokeArray); 
+    renderSmallCard(pokeArray)
 }

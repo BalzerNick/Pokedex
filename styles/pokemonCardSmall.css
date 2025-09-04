@@ -17,7 +17,7 @@
     min-width: 200px;
     height: 280px;
     width: 200px;
-    background-color: #082029;
+    
     border: 3px solid;
     box-shadow: 0 0 15px ;
     text-transform: capitalize;
@@ -76,9 +76,23 @@
     flex-direction: column;
 }
 
-.litteCardButtom{
+.smallCardButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallCardButton{
     height: 100px;
     margin: 50px;
     width: 300px;
     border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.smallCardButton:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }

@@ -7,13 +7,20 @@ body{
     width: 100%;
 }
 
+.primaryBackground{
+    background-color: #06151d;
+}
+
+.secondaryBackground{
+    background-color: #082029;
+}
+
 .content{
     height: 100%;
     width: 100%;
 }
 
 header{
-    background-color: #082029;
     height: 100px;
 }
 
@@ -28,11 +35,30 @@ main{
 
 
 footer{
-   
-    background-color: #082029;
     height: 100px;
 }
 
 .dNone{
     display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #06151d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #082029;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
