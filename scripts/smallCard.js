@@ -3,12 +3,10 @@ function renderSmallCard(pokemon){
     smallContainer.innerHTML = "";
     for (let index = 0; index < pokemon.length; index++) {
         smallContainer.innerHTML += getSmallCardTemplate(pokemon[index], pokemon[index].Type[0].TypeName);
-        renderTypeSmall(pokemon[index].Type,pokemon[index].ID );
-  
-        
+        renderTypeSmall(pokemon[index].Type,pokemon[index].ID ); 
     }
 
-   
+    smallContainer.innerHTML += getButtonTemplate();
 }
 
 function renderTypeSmall(types, id){

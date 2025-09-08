@@ -15,6 +15,14 @@ function getSmallCardTemplate(mon, type) {
     `
 }
 
+function getButtonTemplate(){
+    return `
+            <div class="smallCardButtonContainer">
+                <button class="smallCardButton secondaryBackground" onclick="getPokemon()">Load more Pokemon</button>
+            </div>
+        `
+}
+
 //${type}
 
 function getSmallCardTypes(type){

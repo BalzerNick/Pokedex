@@ -1,6 +1,7 @@
+let currentNames = [];
+
 function init() {
-    let url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-    getPokemon(url);
+    getPokemon();
 }
 
 function visibilityDialog(index, status) {
@@ -15,9 +16,21 @@ function noEvent(event){
     event.stopPropagation();
 }
 
+function filterAndShowNames(filterWord){
+    if(filterWord.length >= 3){
+        currentNames = pokeArray.filter(pokemon =>pokemon.Name.includes(filterWord));
+        renderSmallCard(currentNames);
+    }
+    else if(filterWord.length == 0){
+        currentNames = pokeArray;
+        renderSmallCard(currentNames);
+    }
+    
+    
+}
 
-function morePokemon(){
-    let amount = pokeArray.length;
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${amount}`;
-    getPokemon(url);
+function showLoadingSpinner(){
+    const smallContainer = document.getElementById("small_card_container");
+    smallContainer.innerHTML = "";
+    smallContainer.innerHTML = "...loading"
 }

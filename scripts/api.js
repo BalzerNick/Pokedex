@@ -1,6 +1,10 @@
 let pokeArray = [];
 
-async function getPokemon(url){
+async function getPokemon(){
+
+    showLoadingSpinner()
+    let amount = pokeArray.length;
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=${amount}`;
     let response = await fetch(url);
     let toJson = await response.json();
     
@@ -56,5 +60,7 @@ async function makePokeArray(pokeList){
         }
         pokeArray.push(Pokemon);
     }
-    renderSmallCard(pokeArray)
+
+    currentNames = pokeArray;
+    renderSmallCard(currentNames)
 }
