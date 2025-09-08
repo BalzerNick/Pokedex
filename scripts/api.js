@@ -3,7 +3,7 @@ let pokeArray = [];
 async function getPokemon(){
     showLoadingSpinner()
     let amount = pokeArray.length;
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=${amount}`;
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=25&offset=${amount}`;
     let response = await fetch(url);
     let toJson = await response.json();
     
