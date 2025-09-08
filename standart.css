@@ -133,3 +133,9 @@ footer{
   cursor: pointer;
   transform: scale(1.03);
 }
+
+@media(max-width: 440px) {
+    .headerIMG p{
+      display: none;
+    }
+}
