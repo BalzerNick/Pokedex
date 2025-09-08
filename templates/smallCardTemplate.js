@@ -30,3 +30,12 @@ function getSmallCardTypes(type){
        <img src="${type.TypePng}" alt="">
     `
 }
+
+function getSpinner(){
+    return `
+        <div class="loading"> 
+            <img src="assets/img/pokeball_color.png" class="spinner" alt="Pokeball in rot weiß">
+            <p>...loading</p>
+        </div>    
+        `
+}

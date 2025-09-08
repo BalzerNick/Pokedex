@@ -32,5 +32,5 @@ function filterAndShowNames(filterWord){
 function showLoadingSpinner(){
     const smallContainer = document.getElementById("small_card_container");
     smallContainer.innerHTML = "";
-    smallContainer.innerHTML = "...loading"
+    smallContainer.innerHTML = getSpinner();
 }

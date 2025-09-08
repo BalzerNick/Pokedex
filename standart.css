@@ -5,10 +5,12 @@ body{
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
+    
 }
 
 .primaryBackground{
     background-color: #06151d;
+    width: 100%;
 }
 
 .secondaryBackground{
@@ -16,23 +18,89 @@ body{
 }
 
 .content{
-    height: 100%;
-    width: 100%;
+  
+  height: 100%;
+  width: 100%;
 }
 
 header{
-    height: 100px;
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img{
+  height: 50px;
+  width: 50px;
+  padding-right: 20px;
+}
+
+header img:hover {
+  cursor: pointer;
+}
+
+.headerIMG{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  
+  align-items: center;
+  max-width: 1440px;
 }
 
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: calc(100vh - 200px);
+    width: 100%;
     overflow-y: auto; 
- 
+   
+    align-items: center;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+}
+
+.loading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+}
+
+.spinner{
+  height: 150px;
+  width: 150px;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate{
+    100%{ transform:rotate(1turn) } 
+}
 
 footer{
     height: 100px;

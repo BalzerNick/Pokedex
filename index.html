@@ -27,9 +27,15 @@
 <body onload="init()">
     <div class="content" id="content">
         <header class="secondaryBackground">
-            <img src="" alt="">
-            <div id="searchbar">
-                <input type="text" oninput="filterAndShowNames(this.value)">
+            <div class="headerContent">
+                <div class="headerIMG">
+                    <img src="assets/img/pokeball_color.png" onclick="getPokemon()" alt="Pokeball in rot weiß">
+                    <p>Pokedex</p>
+                </div>
+        
+                <div id="searchbar">
+                    <input type="text" oninput="filterAndShowNames(this.value)">
+                </div>
             </div>
         </header>
 
