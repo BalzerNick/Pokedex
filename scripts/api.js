@@ -59,7 +59,6 @@ async function makePokeArray(pokeList){
         }
         pokeArray.push(Pokemon);
     }
-
     currentNames = pokeArray;
-    renderSmallCard(currentNames)
+    renderSmallCard(currentNames);
 }

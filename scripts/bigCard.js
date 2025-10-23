@@ -2,6 +2,6 @@ function renderBigCard(){
     
 }
 
-function toggleOverlay(){
-    visibilityDialog('isHidden');
+function toggleOverlay(mon, type){
+    visibilityDialog('isHidden', mon, type);
 }

@@ -4,12 +4,13 @@ function init() {
     getPokemon();
 }
 
-function visibilityDialog(index, status) {
+function visibilityDialog(string,mon, type) {
     let overlayRef = document.getElementById('dialog');
     overlayRef.classList.toggle('dNone');
     overlayRef.classList.toggle('dialogOpenStyle')
     
     //Hier Funktion um das gedrückte Pokemon zu öffnen
+    overlayRef.innerHTML = getBigCardTemplate(mon, type);
 }
 
 function noEvent(event){
@@ -24,9 +25,7 @@ function filterAndShowNames(filterWord){
     else if(filterWord.length == 0){
         currentNames = pokeArray;
         renderSmallCard(currentNames);
-    }
-    
-    
+    } 
 }
 
 function showLoadingSpinner(){
