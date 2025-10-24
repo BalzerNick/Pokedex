@@ -2,7 +2,7 @@ function getSmallCardTemplate(mon, type) {
       return `
      <div class="cardSmall secondaryBackground"
          id="small_card"
-         onclick='toggleOverlay(${JSON.stringify(mon)}, "${type}")'>
+         onclick='openModal()' tabindex="0" role="button">
       <div id="small_card_top" class="smallTop">
         <div id="number_small" class="numberSmall">#${mon.ID}</div>
         <div id="name_small" class="nameSmall">${mon.Name}</div>
@@ -13,7 +13,7 @@ function getSmallCardTemplate(mon, type) {
       <div id="small_card_bottom${mon.ID}" class="smallBottom"></div>
     </div>
   `;
-}
+}     
 
 function getButtonTemplate(){
     return `

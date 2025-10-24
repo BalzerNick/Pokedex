@@ -25,43 +25,42 @@
 </head>
 
 <body onload="init()">
-    <div class="content" id="content">
-        <header class="secondaryBackground">
-            <div class="headerContent">
-                <div class="headerIMG">
-                    <img src="assets/img/pokeball_color.png" onclick="getPokemon()" alt="Pokeball in rot weiß">
-                    <p>Pokedex</p>
-                </div>
-        
-                <div id="searchbar">
-                    <input type="text" oninput="filterAndShowNames(this.value)">
-                </div>
+    <header class="secondaryBackground">    
+        <div class="headerContent">
+            <div class="headerIMG">
+                <img role="button" tabindex="0" src="assets/img/pokeball_color.png" onclick="getPokemon()" alt="Pokeball in rot weiß">
+                <button  tabindex="0" onclick="getPokemon()">
+                    <img  src="assets/img/pokeball_color.png"  alt="Pokeball in rot weiß">
+                </button>
+                <h1>Pokedex</h1>
             </div>
-        </header>
 
-        <main class="primaryBackground">
-            <div class="mainContainer" id="main_content">
-                <div id="small_card_container" class="smallCardContainer">
-        
-                </div>
-        
+            <div id="searchbar" role="search" aria-labelledby="searchId">
+                <label id="searchId" for="searchBar">Search: </label>
+                <input id="searchBar" type="text" oninput="filterAndShowNames(this.value)">
             </div>
-        
-            <overlay id="dialog" onclick="visibilityDialog(-1,'isVisible')" class="dNone">
-                <div id="dialogCard" class="dialog" onclick="noEvent(event)">
-        
-                </div>
-            </overlay>
-        </main>
+        </div>
+    </header>
+
+    <main class="primaryBackground" id="main">
+        <div class="mainContainer" id="main_content">
+            <div id="small_card_container" class="smallCardContainer">
+
+            </div>
+
+        </div>
+
+        <dialog id="bigPokemonCard" onclick="closeModal()">
+            <div id="dialogCard" class="dialog" onclick="noEvent(event)">
+
+            </div>
+        </dialog>
+    </main>
 
 
-        <footer class="secondaryBackground">
+    <footer class="secondaryBackground">
 
-        </footer>
-    </div>
-
-
-
+    </footer>
 </body>
 
 </html>

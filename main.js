@@ -4,13 +4,26 @@ function init() {
     getPokemon();
 }
 
-function visibilityDialog(string,mon, type) {
-    let overlayRef = document.getElementById('dialog');
-    overlayRef.classList.toggle('dNone');
-    overlayRef.classList.toggle('dialogOpenStyle')
+function visibilityDialog(mon, type) {
+    let overlayRef = document.getElementById('bigPokemonCard');
+     overlayRef.showModal();
+    overlayRef.classList.toggle('dialogOpenStyle');
     
     //Hier Funktion um das gedrückte Pokemon zu öffnen
-    overlayRef.innerHTML = getBigCardTemplate(mon, type);
+    //overlayRef.innerHTML = getBigCardTemplate(mon, type);
+}
+
+function openModal(){
+    let overlayRef = document.getElementById('bigPokemonCard');
+    overlayRef.showModal();
+    overlayRef.classList.add('dialogOpenStyle');
+}
+
+function closeModal(){
+      let overlayRef = document.getElementById('bigPokemonCard');
+      overlayRef.classList.remove('dialogOpenStyle');
+    //   overlayRef.innerHTML = "";
+     overlayRef.close();
 }
 
 function noEvent(event){

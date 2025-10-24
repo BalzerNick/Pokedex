@@ -30,12 +30,14 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 header img{
   height: 50px;
   width: 50px;
   padding-right: 20px;
+  
 }
 
 header img:hover {
