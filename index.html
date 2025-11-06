@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,19 +25,23 @@
 </head>
 
 <body onload="init()">
-    <header class="secondaryBackground">    
+    <header class="secondaryBackground">
         <div class="headerContent">
             <div class="headerIMG">
-                <button  tabindex="0" onclick="getPokemon()">
-                    <img  src="assets/img/pokeball_color.png"  alt="Pokeball in rot weiß">
+                <button class="headButton" tabindex="0" onclick="getPokemon()">
+                    <img src="assets/img/pokeball_color.png" alt="Pokeball in rot weiß">
                 </button>
                 <h1>Pokedex</h1>
             </div>
-
-            <div id="searchbar" role="search" aria-labelledby="searchId">
-                <label id="searchId" for="searchBar">Search: </label>
-                <input id="searchBar" type="text" oninput="filterAndShowNames(this.value)">
-            </div>
+    
+            <form id="searchForm" onsubmit="showSearchedNames(event)">
+                
+                    <label id="searchId" for="searchBar">Search: </label>
+                    <input name="q" id="searchBar" type="search" minlength="3" required size="30"
+                        placeholder="Must contain at least 3 letters" oninput="filterAndShowNames(this.value)">
+                    <button id="searchButton" type="submit">Search</button>
+                
+            </form>
         </div>
     </header>
 

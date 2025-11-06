@@ -54,17 +54,13 @@ function noEvent(event){
 }
 
 function filterAndShowNames(filterWord){
-    if(filterWord.length >= 3){
-        currentNames = pokeArray.filter(pokemon =>pokemon.Name.includes(filterWord));
-        renderSmallCard(currentNames);
-    }
-    else if(filterWord.length == 0){
-        currentNames = pokeArray;
-        renderSmallCard(currentNames);
-    } 
+
 }
 
-function showSearchedNames() {
+function showSearchedNames(event) {
+    const input = document.getElementById("searchBar");
+    event.preventDefault();
+    const filterWord = input.value.trim();
     if (filterWord.length >= 3) {
         currentNames = pokeArray.filter(pokemon => pokemon.Name.includes(filterWord));
         renderSmallCard(currentNames);
@@ -72,9 +68,6 @@ function showSearchedNames() {
     else if (filterWord.length == 0) {
         currentNames = pokeArray;
         renderSmallCard(currentNames);
-    }
-    else{
-        
     }
 }
 
