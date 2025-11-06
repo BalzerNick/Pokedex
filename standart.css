@@ -8,6 +8,10 @@ body{
     
 }
 
+h1{
+  padding-left: 20px;
+}
+
 .primaryBackground{
     background-color: #06151d;
     width: 100%;
@@ -36,12 +40,26 @@ header{
 header img{
   height: 50px;
   width: 50px;
-  padding-right: 20px;
+  object-fit: contain;
   
 }
 
 header img:hover {
   cursor: pointer;
+}
+
+header button:hover {
+  cursor: pointer;
+}
+
+header button{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
 .headerIMG{

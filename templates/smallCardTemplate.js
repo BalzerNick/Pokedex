@@ -1,17 +1,17 @@
 function getSmallCardTemplate(mon, type) {
       return `
-     <div class="cardSmall secondaryBackground"
+     <button class="cardSmall secondaryBackground"
          id="small_card"
-         onclick='openModal()' tabindex="0" role="button">
-      <div id="small_card_top" class="smallTop">
-        <div id="number_small" class="numberSmall">#${mon.ID}</div>
-        <div id="name_small" class="nameSmall">${mon.Name}</div>
+         onclick='openModal()'>
+      <div id="small_card_top" class="smallTop" >
+        <span  id="number_small" class="numberSmall">#${mon.ID}</span>
+        <span  id="name_small" class="nameSmall">${mon.Name}</span>
       </div>
-      <div id="small_card_middle" class="smallMiddle ${type}">
+      <div id="small_card_middle${mon.ID}" class="smallMiddle ">
         <img src="${mon.PNG}" alt="${mon.Name}">
       </div>
       <div id="small_card_bottom${mon.ID}" class="smallBottom"></div>
-    </div>
+    </button>
   `;
 }     
 
