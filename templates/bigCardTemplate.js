@@ -1,16 +1,28 @@
-function getBigCardTemplate(mon, type){
-      return `
-     <div class="cardSmall secondaryBackground"
-         id="small_card"
-         onclick='closeModal()'>
-      <div id="small_card_top" class="smallTop">
-        <div id="number_small" class="numberSmall">#${mon.ID}</div>
-        <div id="name_small" class="nameSmall">${mon.Name}</div>
-      </div>
-      <div id="small_card_middle" class="smallMiddle ${type}">
-        <img src="${mon.PNG}" alt="${mon.Name}">
-      </div>
-      <div id="small_card_bottom${mon.ID}" class="smallBottom"></div>
-    </div>
-  `;
+function getBigCardAboutContent() {
+  return `
+          <div class="about">
+            <p>Species: </p>
+            <p>Weight: </p>
+            <p>Height: </p>
+            <p>Abilities: </p>
+          </div>
+          <div class="breeding">
+            <h3>Breeding</h3>
+            <p>Gender: </p>
+            <p>Egg Group: </p>
+            <p>Egg Cycle: </p>
+          </div>
+  `
+}
+
+function getBigCardBaseStatsContent(){
+  return ``
+}
+
+function getBigCardEvolutionContent(){
+  return ``
+}
+
+function getBigCardMovesContent(){
+  return ``
 }
