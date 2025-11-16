@@ -14,6 +14,7 @@ async function getPokemon(){
 async function getPokemonInformations(url){
     let response = await fetch(url);
     let toJson = await response.json();
+    console.log(toJson);
     
     let pokeData = {
         "PNG": toJson.sprites.other["official-artwork"].front_default,
@@ -55,10 +56,15 @@ async function makePokeArray(pokeList){
            Name: element.name, 
            ID: data.ID,
            PNG: data.PNG,
-           Type: types
+           Type: types,
+           Url: element.url
         }
         pokeArray.push(Pokemon);
     }
     currentNames = pokeArray;
     renderSmallCard(currentNames);
+}
+
+async function getPokemonInformation(){
+
 }

@@ -1,44 +1,121 @@
-
-
-dialog{
-    height: calc(100% - 50vh);
+dialog {
+    height: 600px;
     width: 350px;
-    border-radius: 10%;
- 
+    border-radius: 10px;
+    padding: 0;
 }
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.4);
     /* halbtransparent */
 }
+
 .dialogContent{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    height: 600px;
+    width: 350px;     
+    margin: 0;
+    padding: 0;                                                                                                                                                                                                                                                                                                                                           
 }
 
-dialog header{
-    position: absolute;
+.dialogContent header{
     top: 0;
-    background-color: red;
-    height: 200px;
+    height: 220px;
     width: 100%;
-    border-radius: 10%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-dialog main{
+.dialogHeaderInformation{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dialogHeaderImgs{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dialogContent main{
+    flex: 1;
+    height: 300px;
+    width: 100%;
     background-color: white;
-    height: 50%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.bigCardNavigation{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-dialog footer{
-    background: white;
-    height: 10px;
-     width: 100%;
+.bigCardNavigation button {
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    padding: 2px 6px;
+    cursor: pointer;
+    background-color: white;
 }
 
+.bigCardNavigation button:active,
+.bigCardNavigation button:focus,
+.bigCardNavigation button.isSelected{
+    border-bottom-color: black;
+    outline: none;
+}
+
+.mainContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.about{
+    width: 200px;
+    padding-left: 30px;
+    bottom: 0;
+}
+
+.breeding{
+    width: 200px;
+    padding-left: 30px;
+    bottom: 0;
+}
+
+.dialogContent footer{
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.dialogContent footer button{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
 

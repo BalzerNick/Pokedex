@@ -9,6 +9,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./standart.css">
     <link rel="stylesheet" href="./styles/types.css">
+    <link rel="stylesheet" href="./styles/search.css">
     <link rel="stylesheet" href="./styles/dialog.css">
     <link rel="stylesheet" href="./styles/pokemonCardSmall.css">
 
@@ -35,12 +36,11 @@
             </div>
     
             <form id="searchForm" onsubmit="showSearchedNames(event)">
-                
-                    <label id="searchId" for="searchBar">Search: </label>
+                <div class="autoComplete">
                     <input name="q" id="searchBar" type="search" minlength="3" required size="30"
                         placeholder="Must contain at least 3 letters" oninput="filterAndShowNames(this.value)">
-                    <button id="searchButton" type="submit">Search</button>
-                
+                </div>
+                <button id="searchButton" type="submit">Search</button>
             </form>
         </div>
     </header>
@@ -54,10 +54,44 @@
         </div>
     
         <dialog id="bigPokemonCard" onclick="closeModal()">
-            <div class="dialogContent">
-                <header></header>
-                <main></main>
+            <div class="dialogContent" onclick="noEvent(event)">
+                <header>
+                    <div class="dialogHeaderInformation">
+                        <p>Name</p>
+                        <p>#Id</p>
+                    </div>
+                    <div class="dialogHeaderImgs">
+                        <div>
+                            Type IMG
+                        </div>
+                        Poke IMG
+                    </div>
+                </header>
+                <main>
+                    <div class="bigCardNavigation">
+                        <button class="isSelected" onclick="loadInformation(0)">About</button>
+                        <button onclick="loadInformation(1)">Base Stats</button>
+                        <button onclick="loadInformation(2)">Evolution</button>
+                        <button onclick="loadInformation(3)">Moves</button>
+                    </div>
+                    <div id="bigCardMainContent" class="mainContent">
+                        <div class="about">
+                            <p>Species: </p>
+                            <p>Height: </p>
+                            <p>Weight: </p>
+                            <p>Abilities: </p>
+                        </div>
+                        <div class="breeding">
+                            <h3>Breeding</h3>
+                            <p>Gender: </p>
+                            <p>Egg Group: </p>
+                            <p>Egg Cycle: </p>
+                        </div>
+                    </div>
+                </main>
                 <footer>
+                    <button onclick="previousMon()"><-</button>
+                    <button onclick="nextMon()">-></button>
                 </footer>
             </div>
         </dialog>

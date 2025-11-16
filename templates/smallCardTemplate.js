@@ -2,7 +2,7 @@ function getSmallCardTemplate(mon, type) {
       return `
      <button class="cardSmall secondaryBackground"
          id="small_card"
-         onclick='openModal()'>
+         onclick='openModal("${mon.Url}")'>
       <div id="small_card_top" class="smallTop" >
         <span  id="number_small" class="numberSmall">#${mon.ID}</span>
         <span  id="name_small" class="nameSmall">${mon.Name}</span>

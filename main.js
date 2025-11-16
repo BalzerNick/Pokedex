@@ -34,27 +34,33 @@ function visibilityDialog(mon, type) {
     //overlayRef.innerHTML = getBigCardTemplate(mon, type);
 }
 
-function openModal(){
+async function openModal(url){
     let overlayRef = document.getElementById('bigPokemonCard');
     overlayRef.showModal();
-    overlayRef.classList.add('dialogOpenStyle');
+    console.log(url);
+    
+    await renderBigCard(url);
 }
 
-function closeModal(){
-      let overlayRef = document.getElementById('bigPokemonCard');
-      overlayRef.classList.remove('dialogOpenStyle');
-    //   overlayRef.innerHTML = "";
-         let card = document.getElementById('dialogCard');
-    card.classList.remove("bigCard");
-     overlayRef.close();
+function closeModal() {
+    let overlayRef = document.getElementById('bigPokemonCard');
+    overlayRef.classList.remove('dialogOpenStyle');
+    overlayRef.close();
 }
 
 function noEvent(event){
     event.stopPropagation();
 }
 
-function filterAndShowNames(filterWord){
-
+function filterAndShowNames(filterWord) {
+    if (filterWord.length >= 3) {
+        currentNames = pokeArray.filter(pokemon => pokemon.Name.includes(filterWord));
+        
+    }
+    else if (filterWord.length == 0) {
+        currentNames = pokeArray;
+        
+    }
 }
 
 function showSearchedNames(event) {
@@ -80,4 +86,22 @@ function showLoadingSpinner(){
 function getColor(typeName) {
   const color = typeColors[typeName];
   return color || "#000000"; 
+}
+
+function renderColor(color1, color2, idName) {
+    const container = document.getElementById(idName);
+    let gradient =""
+    if(idName.includes("big")){ 
+        gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
+    else{
+        gradient = `linear-gradient(to bottom right, ${color1}, ${color2})`;
+    }
+    
+    container.style.background = gradient;
+}
+
+
+function noEvent(event){
+    event.stopPropagation();
 }
