@@ -19,7 +19,7 @@ async function getPokemonInformations(url, card){
         pokeData = getSmallData(toJson);
     }
     else if(card == "big"){
-        pokeData = getBigData(toJson)
+        pokeData = getBigData(toJson, url)
     }
     return pokeData;
 }
@@ -33,12 +33,16 @@ async function getSmallData(json){
     return pokeData;
 }
 
-async function getBigData(json){
+async function getBigData(json, url){
     let data = {
         "sprite": json.sprites.other["showdown"].front_default,
         "id": json.id,
         "type": json.types,
-        "name": json.species.name
+        "name": json.species.name,
+        "abilities": json.abilities,
+        "height" : json.height,
+        "weight" :json.weight / 10,
+        "url": url
     }
     return data;
 }
@@ -79,6 +83,8 @@ async function makePokeArray(pokeList, card){
         pokeArray.push(Pokemon);
     }
     currentNames = pokeArray;
+    console.log(pokeArray);
+    
     renderSmallCard(currentNames);
 }
 

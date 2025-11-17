@@ -1,20 +1,33 @@
+let lastClickedButton = "about";
 const bigCardTemplates = {
-    about: getBigCardAboutContent(),
-    baseStats: getBigCardBaseStatsContent(),
-    evolution: getBigCardEvolutionContent(),
-    moves: getBigCardMovesContent()
+    about: getBigCardAboutContent,
+    baseStats: getBigCardBaseStatsContent,
+    evolution: getBigCardEvolutionContent,
+    breeding: getBigCardBreedingContent
 }
 
 async function renderBigCard(url){
     let poke = await getPokemonInformations(url, "big");
     const bigContainer = document.getElementById("bigCardHeader");
     bigContainer.innerHTML = getBigCardDescription(poke);
+
+    const mainNav = document.getElementById("mainNavigation");
+    mainNav.innerHTML = getBigCardMainNavigation(poke);
+
     const bigFooter = document.getElementById("bigFooter");
     bigFooter.innerHTML = getBigCardFooter(poke.id);
+
+    showInformationsBigCard(poke)
+}
+
+async function showInformationsBigCard(poke){
     showColorBig(poke.type);
     let types = await getType(poke.type);
     renderTypeBig(types);
+    loadInformation(lastClickedButton, poke.url);
+    
 }
+
 
 function renderTypeBig(types){
     const typeContainer = document.getElementById(`typesBig`);
@@ -24,12 +37,15 @@ function renderTypeBig(types){
     }
 }
 
-async function loadInformation(buttonId){
-    //Informationen per API laden, jenachdem um welches Pokemon es geht
+async function loadInformation(buttonId, url){
+    let poke = await getPokemonInformations(url, "big");
+    lastClickedButton = buttonId;
     changeSelectedBottom(buttonId);
-    const template = bigCardTemplates[buttonId];
+    const template = bigCardTemplates[buttonId](poke);
     const content = document.getElementById("bigCardMainContent");
     content.innerHTML = template;
+
+    contentSwitch(poke, buttonId, url)
 }
 
 function showColorBig(types) {
@@ -78,3 +94,25 @@ function changeSelectedBottom(id) {
     button.classList.add('isSelected');
 }
 
+function getAbilities(ab){
+    const container = document.getElementById('abilities');
+    let array = [];
+    console.log(ab);
+    
+    for (let index = 0; index < ab.length; index++) {
+        array.push(ab[index].ability.name)
+    }
+    container.innerHTML += array.join(', ')
+}
+
+function contentSwitch(poke, content, url){
+    if(content == "about"){
+        getAbilities(poke.abilities);
+    }else if(content == "baseStats"){
+
+    }else if(content == "evolution"){
+
+    }else if(content == "breeding"){
+
+    }
+}
