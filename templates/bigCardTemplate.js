@@ -1,3 +1,16 @@
+function getBigCardDescription(mon){
+  return `<div class="dialogHeaderInformation">
+           <p>#${mon.id}</p>
+           <p>${mon.name}</p>
+          </div>
+          <div class="dialogHeaderImgs">
+              <div id="typesBig" class="typesBig">
+                  Type IMG
+              </div>
+              <img src="${mon.sprite}"></img>
+          </div>`
+}
+
 function getBigCardAboutContent() {
   return `
           <div class="about">
@@ -25,4 +38,11 @@ function getBigCardEvolutionContent(){
 
 function getBigCardMovesContent(){
   return ``
+}
+
+function getBigCardFooter(id){
+  return `
+         <button onclick="anotherMon(${id}, '-')"><-</button>
+         <button onclick="anotherMon(${id},'+')">-></button>
+        `
 }

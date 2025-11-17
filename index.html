@@ -55,32 +55,22 @@
     
         <dialog id="bigPokemonCard" onclick="closeModal()">
             <div class="dialogContent" onclick="noEvent(event)">
-                <header>
-                    <div class="dialogHeaderInformation">
-                        <p>Name</p>
-                        <p>#Id</p>
-                    </div>
-                    <div class="dialogHeaderImgs">
-                        <div>
-                            Type IMG
-                        </div>
-                        Poke IMG
-                    </div>
+                <header id="bigCardHeader">
+
                 </header>
                 <main>
-                    <div class="bigCardNavigation">
-                        <button class="isSelected" onclick="loadInformation(0)">About</button>
-                        <button onclick="loadInformation(1)">Base Stats</button>
-                        <button onclick="loadInformation(2)">Evolution</button>
-                        <button onclick="loadInformation(3)">Moves</button>
+                    <div id="mainNavigation" class="bigCardNavigation">
+                        <button id="about" class="isSelected" onclick="loadInformation(`about`)">About</button>
+                        <button id="baseStats" onclick="loadInformation(`baseStats`)">Base Stats</button>
+                        <button id="evolution" onclick="loadInformation(`evolution`)">Evolution</button>
+                        <button id="moves" onclick="loadInformation(`moves`)">Moves</button>
                     </div>
                     <div id="bigCardMainContent" class="mainContent">
 
                     </div>
                 </main>
-                <footer>
-                    <button onclick="previousMon()"><-</button>
-                    <button onclick="nextMon()">-></button>
+                <footer id="bigFooter">
+
                 </footer>
             </div>
         </dialog>

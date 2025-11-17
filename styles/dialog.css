@@ -3,6 +3,7 @@ dialog {
     width: 350px;
     border-radius: 10px;
     padding: 0;
+    text-transform: capitalize;
 }
 
 dialog::backdrop {
@@ -39,6 +40,11 @@ dialog::backdrop {
     align-items: center;
 }
 
+.dialogHeaderInformation p{
+    font-size: 28px;
+}
+
+
 .dialogHeaderImgs{
     height: 70%;
     width: 100%;
@@ -46,6 +52,23 @@ dialog::backdrop {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.dialogHeaderImgs img{
+    height: 120px;
+    width: 120px;
+}
+
+.typesBig{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.typesBig img{
+    height: 30px;
+    width: 80px;
 }
 
 .dialogContent main{

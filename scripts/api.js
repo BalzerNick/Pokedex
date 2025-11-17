@@ -7,22 +7,40 @@ async function getPokemon(){
     let response = await fetch(url);
     let toJson = await response.json();
     
-    makePokeArray(toJson.results);
+    makePokeArray(toJson.results, "small");
 }
 
 
-async function getPokemonInformations(url){
+async function getPokemonInformations(url, card){
     let response = await fetch(url);
     let toJson = await response.json();
-    console.log(toJson);
-    
-    let pokeData = {
-        "PNG": toJson.sprites.other["official-artwork"].front_default,
-        "ID": toJson.id,
-        "Type": toJson.types
+    let pokeData = "";
+    if(card == "small"){
+        pokeData = getSmallData(toJson);
     }
-
+    else if(card == "big"){
+        pokeData = getBigData(toJson)
+    }
     return pokeData;
+}
+
+async function getSmallData(json){
+    let pokeData = {
+        "PNG": json.sprites.other["official-artwork"].front_default,
+        "ID": json.id,
+        "Type": json.types
+    }
+    return pokeData;
+}
+
+async function getBigData(json){
+    let data = {
+        "sprite": json.sprites.other["showdown"].front_default,
+        "id": json.id,
+        "type": json.types,
+        "name": json.species.name
+    }
+    return data;
 }
 
 async function getType(types) {
@@ -47,11 +65,10 @@ async function getTypeInformations(typeUrl){
     return toJson.sprites["generation-ix"]["scarlet-violet"].name_icon
 }
 
-async function makePokeArray(pokeList){
+async function makePokeArray(pokeList, card){
     for (const element of pokeList) {
-        let data = await getPokemonInformations(element.url);    
+        let data = await getPokemonInformations(element.url, card);    
         let types = await getType(data.Type);
-
         let Pokemon = {
            Name: element.name, 
            ID: data.ID,
@@ -65,6 +82,6 @@ async function makePokeArray(pokeList){
     renderSmallCard(currentNames);
 }
 
-async function getPokemonInformation(){
-
+async function getPokemonInformation(id){
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 }

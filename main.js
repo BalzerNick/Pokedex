@@ -37,7 +37,6 @@ function visibilityDialog(mon, type) {
 async function openModal(url){
     let overlayRef = document.getElementById('bigPokemonCard');
     overlayRef.showModal();
-    console.log(url);
     
     await renderBigCard(url);
 }
