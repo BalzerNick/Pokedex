@@ -60,6 +60,7 @@ function showColorBig(types) {
         color1 = getColor(types[0].type.name);
         color2 = getColor(types[0].type.name);
     }
+    
     renderColor(color1, color2, name)
 }
 

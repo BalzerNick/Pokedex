@@ -11,18 +11,18 @@ dialog::backdrop {
     /* halbtransparent */
 }
 
-.dialogContent{
+.dialogContent {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 600px;
-    width: 350px;     
+    width: 350px;
     margin: 0;
-    padding: 0;                                                                                                                                                                                                                                                                                                                                           
+    padding: 0;
 }
 
-.dialogContent header{
+.dialogContent header {
     top: 0;
     height: 220px;
     width: 100%;
@@ -31,7 +31,7 @@ dialog::backdrop {
     flex-direction: column;
 }
 
-.dialogHeaderInformation{
+.dialogHeaderInformation {
     height: 30%;
     width: 100%;
     display: flex;
@@ -40,12 +40,11 @@ dialog::backdrop {
     align-items: center;
 }
 
-.dialogHeaderInformation p{
+.dialogHeaderInformation p {
     font-size: 28px;
 }
 
-
-.dialogHeaderImgs{
+.dialogHeaderImgs {
     height: 70%;
     width: 100%;
     display: flex;
@@ -54,33 +53,33 @@ dialog::backdrop {
     align-items: center;
 }
 
-.dialogHeaderImgs img{
+.dialogHeaderImgs img {
     height: 120px;
     width: 120px;
 }
 
-.typesBig{
+.typesBig {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.typesBig img{
+.typesBig img {
     height: 30px;
     width: 80px;
 }
 
-.dialogContent main{
+.dialogContent main {
     flex: 1;
-    height: 300px;
+    height: 315px;
     width: 100%;
     background-color: white;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
-.bigCardNavigation{
+.bigCardNavigation {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -96,12 +95,12 @@ dialog::backdrop {
     background-color: white;
 }
 
-.bigCardNavigation button.isSelected{
+.bigCardNavigation button.isSelected {
     border-bottom-color: black;
     outline: none;
 }
 
-.mainContent{
+.mainContent {
     width: 100%;
     height: 100%;
     display: flex;
@@ -109,19 +108,19 @@ dialog::backdrop {
     justify-content: left;
 }
 
-.about{
+.about {
     width: 300px;
     padding-left: 30px;
     bottom: 0;
 }
 
-.breeding{
+.breeding {
     width: 200px;
     padding-left: 30px;
     bottom: 0;
 }
 
-.dialogContent footer{
+.dialogContent footer {
     height: 60px;
     width: 100%;
     background-color: white;
@@ -134,10 +133,56 @@ dialog::backdrop {
     align-items: center;
 }
 
-
-.dialogContent footer button{
+.dialogContent footer button {
     border-radius: 50%;
     height: 50px;
     width: 50px;
 }
 
+@media(max-width: 410px) {
+    dialog {
+        width: 320px;
+    }
+
+    .dialogContent main {
+        height: 315px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dialogContent {
+        width: 320px;
+    }
+
+    .mainContent {
+        height: calc(320px - 21px);
+    }
+
+    .about {
+        width: 290px;
+    }
+}
+
+@media(max-width: 360px) {
+    dialog {
+        width: 270px;
+    }
+
+    .dialogContent main {
+        height: 315px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dialogContent {
+        width: 270px;
+    }
+
+    .mainContent {
+        height: calc(320px - 21px);
+    }
+
+    .about {
+        width: 240px;
+    }
+}

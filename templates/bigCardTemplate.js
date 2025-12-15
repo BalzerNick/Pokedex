@@ -32,17 +32,28 @@ function getBigCardAboutContent(mon) {
 }
 
 function getBigCardBaseStatsContent(){
-  return ``
+  return `
+        <div class="breeding">
+            <p>Atk: </p>
+            <p>Special Atk: </p>
+            <p>Def: </p>
+        </div>
+  `
 }
 
 function getBigCardEvolutionContent(){
-  return ``
+  return `
+          <div class="breeding">
+            <p>Gender: </p>
+            <p>Egg Group: </p>
+            <p>Egg Cycle: </p>
+          </div>
+  `
 }
 
 function getBigCardBreedingContent(){
   return `
           <div class="breeding">
-            <h3>Breeding</h3>
             <p>Gender: </p>
             <p>Egg Group: </p>
             <p>Egg Cycle: </p>
