@@ -3,6 +3,10 @@ form{
     flex-direction: row;
 }
 
+#searchBtn{
+    display: none;
+}
+
 .autoComplete {
     position: relative;
     display: inline-block;
@@ -34,4 +38,14 @@ form{
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+}
+
+@media(max-width: 460px) {
+  #searchForm{
+    display: none;
+  }
+
+  #searchBtn{
+    display: block;
+  }
 }

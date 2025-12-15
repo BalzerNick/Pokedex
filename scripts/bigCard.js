@@ -28,7 +28,6 @@ async function showInformationsBigCard(poke){
     
 }
 
-
 function renderTypeBig(types){
     const typeContainer = document.getElementById(`typesBig`);
     typeContainer.innerHTML = "";
@@ -59,8 +58,7 @@ function showColorBig(types) {
     else {
         color1 = getColor(types[0].type.name);
         color2 = getColor(types[0].type.name);
-    }
-    
+    }  
     renderColor(color1, color2, name)
 }
 
@@ -98,7 +96,6 @@ function changeSelectedBottom(id) {
 function getAbilities(ab){
     const container = document.getElementById('abilities');
     let array = [];
-    console.log(ab);
     
     for (let index = 0; index < ab.length; index++) {
         array.push(ab[index].ability.name)
