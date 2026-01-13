@@ -1,12 +1,22 @@
-function renderSmallCard(pokemon){
+function renderSmallCard(pokemon) {
     const smallContainer = document.getElementById("small_card_container");
     smallContainer.innerHTML = "";
-    for (let index = 0; index < pokemon.length; index++) {
-        smallContainer.innerHTML += getSmallCardTemplate(pokemon[index], pokemon[index].Type[0].TypeName);
-        showColorSmall(pokemon[index].Type, pokemon[index].ID);
-        renderTypeSmall(pokemon[index].Type,pokemon[index].ID ); 
+    if (pokemon.length > 0) {
+        for (let index = 0; index < pokemon.length; index++) {
+            smallContainer.innerHTML += getSmallCardTemplate(pokemon[index], pokemon[index].Type[0].TypeName);
+            showColorSmall(pokemon[index].Type, pokemon[index].ID);
+            renderTypeSmall(pokemon[index].Type, pokemon[index].ID);
+        }
+        smallContainer.innerHTML += getButtonTemplate();
+    }else{
+        showWarning();
     }
-    smallContainer.innerHTML += getButtonTemplate();
+}
+
+function showWarning(){
+    const smallContainer = document.getElementById("small_card_container");
+    smallContainer.innerHTML = "No Pokémon with this name were found.";
+    smallContainer.style.color = "white";
 }
 
 function renderTypeSmall(types, id){
