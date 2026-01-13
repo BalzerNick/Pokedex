@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/pokeball_color.png">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./standart.css">
@@ -35,16 +36,9 @@
                 <h1>Pokedex</h1>
             </div>
     
-            <form id="searchForm" onsubmit="showSearchedNames(event)">
                 <div class="autoComplete">
-                    <input name="q" id="searchBar" type="search" minlength="3" required size="30"
-                        placeholder="Must contain at least 3 letters" oninput="filterAndShowNames(this.value)">
+                    <input name="q" id="searchBar" type="search" required size="30"oninput="filterAndShowNames(this.value)">
                 </div>
-                <button id="searchButton" type="submit">Search</button>
-            </form>
-            <div id="searchBtn">
-                Hallo
-            </div>
         </div>
     </header>
 
@@ -79,9 +73,9 @@
 
     <footer class="secondaryBackground">
         <div>
-            <a href="">Impressum</a>
+            <a href="impressum.html">Impressum</a>
             <span> | </span>
-            <a href="">Datenschutz</a>
+             <a href="privacy_policy.html">Datenschutz</a>
         </div>
     </footer>
 </body>

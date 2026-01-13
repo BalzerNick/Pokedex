@@ -23,47 +23,58 @@ function getBigCardMainNavigation(mon){
 function getBigCardAboutContent(mon) {
   return `
           <div class="about">
-            <p>Species:    ${mon.name}</p>
-            <p>Weight:    ${mon.height}0 cm</p>
-            <p>Height:    ${mon.weight} kg</p>
-            <p id="abilities">Abilities:  </p>
+            <p><span class="label">Species: </span>   ${mon.name}</p>
+            <p><span class="label">Weight:  </span>  ${mon.height}0 cm</p>
+            <p><span class="label">Height:  </span>  ${mon.weight} kg</p>
+            <p id="abilities"><span class="label">Abilities:</span>  </p>
           </div>
   `
 }
 
-function getBigCardBaseStatsContent(){
+function getBigCardBaseStatsContent(mon){
   return `
         <div class="breeding">
-            <p>Atk: </p>
-            <p>Special Atk: </p>
-            <p>Def: </p>
+            <p><span class="label">Hp:</span> ${mon.stats[0].base_stat} </p>
+            <p><span class="label">Attak:</span> ${mon.stats[1].base_stat}</p>
+            <p><span class="label">Defense:</span> ${mon.stats[2].base_stat}</p>
+            <p><span class="label">Special Attak:</span> ${mon.stats[3].base_stat}</p>
+            <p><span class="label">Special Defense:</span> ${mon.stats[4].base_stat}</p>
+            <p><span class="label">Speed:</span> ${mon.stats[5].base_stat}</p>
         </div>
   `
 }
 
 function getBigCardEvolutionContent(){
   return `
-          <div class="breeding">
-            <p>Gender: </p>
-            <p>Egg Group: </p>
-            <p>Egg Cycle: </p>
+          <div class="evo" id="evoLines">
+
           </div>
   `
 }
 
-function getBigCardBreedingContent(){
+async function getEvoContent(mon){
   return `
-          <div class="breeding">
-            <p>Gender: </p>
-            <p>Egg Group: </p>
-            <p>Egg Cycle: </p>
+          <div class="evoLine">
+            <img src="${mon.picUrl}"></img>
+            <p>${mon.name}</p>
           </div>
+  `
+}
+
+function getBigCardBreedingContent(mon){
+  return `
+      <div class="breeding">
+            <p><span class="label">Gender Diffrent: </span><span id="gender"></span> </p>
+            <p><span class="label">Egg Group:</span><span id="egg_group"></span>   </p>
+            <p><span class="label">Capture Rate: </span><span id="capture_rate"></span>  </p>
+            <p><span class="label">Color: </span><span id="color"></span>  </p>
+        </div>
   `
 }
 
 function getBigCardFooter(id){
   return `
-         <button onclick="anotherMon(${id}, '-')"><-</button>
-         <button onclick="anotherMon(${id},'+')">-></button>
+         <button id="left_button" onclick="anotherMon(${id}, '-')"></button>
+         <button id="right_button" onclick="anotherMon(${id},'+')"></button>
         `
 }

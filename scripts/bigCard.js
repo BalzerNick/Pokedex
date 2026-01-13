@@ -103,14 +103,82 @@ function getAbilities(ab){
     container.innerHTML += array.join(', ')
 }
 
-function contentSwitch(poke, content, url){
-    if(content == "about"){
+function getStats(stats){
+    
+}
+
+async function contentSwitch(poke, content, url) {
+    if (content == "about") {
         getAbilities(poke.abilities);
-    }else if(content == "baseStats"){
+    } else if (content == "baseStats") {
+        getStats(poke.stats);
+    } else if (content == "evolution") {
+        let data = await fetchPokeApi(poke.id);
+        let evo = await getEvoChain(data.evolution_chain.url);
+        await makeEvoLines(evo);
+    } else if (content == "breeding") {
+        let data = await fetchPokeApi(poke.id)
+        await showSpeciesDetails(data);
+    }
+}
 
-    }else if(content == "evolution"){
+async function showSpeciesDetails(data){
+    const gender = document.getElementById("gender");
+    const egg_group = document.getElementById("egg_group");
+    const color = document.getElementById("color");
+    const capture_rate = document.getElementById("capture_rate");
+    
+    gender.innerHTML = data.has_gender_differences;
+    egg_group.innerHTML = await getEggGroups(data.egg_groups);
+    color.innerHTML = data.color.name;
+    capture_rate.innerHTML = data.capture_rate;
+}
 
-    }else if(content == "breeding"){
+async function makeEvoLines(evo){
+    const base = await makeMon(evo.chain.species.name);
+    let firstEvo = "";
+    let secondEvo = "";
+    if(evo.chain.evolves_to.length > 0){
+        firstEvo = await makeMon(evo.chain.evolves_to[0].species.name);
+    }
+    if(evo.chain.evolves_to[0].evolves_to.length > 0){
+        secondEvo =  await makeMon(evo.chain.evolves_to[0].evolves_to[0].species.name)
+    }
+    showEvoLines(base, firstEvo, secondEvo)
+}
+
+async function showEvoLines(base, first, second){
+    const container = document.getElementById("evoLines");
+    container.innerHTML = await getEvoContent(base);
+    if(first.name != ""){
+        container.innerHTML += await getEvoContent(first);
+    }
+    if(second.name != ""){
+        container.innerHTML += await getEvoContent(second);
+    }
+}
+
+async function makeMon(name){
+    let pic = await getEvoPicture(name);
+    let obj = {
+        name: name,
+        picUrl: pic
+    }
+    console.log(obj);
+    
+    return obj
+}
+
+async function getEggGroups(eggs){
+    let groups = "";
+    for (let index = 0; index < eggs.length; index++) {
+        if(groups == ""){
+            groups = eggs[index].name
+        }
+        else{
+            groups = groups + ", "+ eggs[index].name
+        }
 
     }
+    return groups ;   
 }

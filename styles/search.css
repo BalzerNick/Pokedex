@@ -12,6 +12,10 @@ form{
     display: inline-block;
 }
 
+.autoComplete input{
+  width: 250px;
+}
+
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -41,11 +45,13 @@ form{
 }
 
 @media(max-width: 460px) {
-  #searchForm{
-    display: none;
+  .autoComplete input {
+    width: 200px;
   }
+}
 
-  #searchBtn{
-    display: block;
+@media(max-width: 380px) {
+  .autoComplete input {
+    width: 180px;
   }
 }

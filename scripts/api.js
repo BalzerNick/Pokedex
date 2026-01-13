@@ -42,6 +42,7 @@ async function getBigData(json, url){
         "abilities": json.abilities,
         "height" : json.height,
         "weight" :json.weight / 10,
+        "stats" : json.stats ,
         "url": url
     }
     return data;
@@ -82,12 +83,34 @@ async function makePokeArray(pokeList, card){
         }
         pokeArray.push(Pokemon);
     }
-    currentNames = pokeArray;
-    console.log(pokeArray);
-    
-    renderSmallCard(currentNames);
+    currentNames = pokeArray;  
+    filterAndShowNames(filterWordTemporary);
 }
 
-async function getPokemonInformation(id){
-    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+async function getSpeciesDetails(id){
+    let url = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+    return url;
+}
+
+async function getEvoChain(url){
+    let response = await fetch(url);
+    let toJson = await response.json();
+    console.log(toJson);
+    
+    return toJson;
+}
+
+async function fetchPokeApi(id){
+    let url  = await getSpeciesDetails(id);
+    let response = await fetch(url);
+    let toJson = await response.json();
+    return toJson;
+}
+
+async function getEvoPicture(name){
+    let url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+    let response = await fetch(url);
+    let toJson = await response.json();
+
+    return toJson.sprites.front_default;
 }

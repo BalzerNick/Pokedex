@@ -1,4 +1,5 @@
 let currentNames = [];
+let filterWordTemporary = ""
 const typeColors = {
   bug: "#A6B91A",
   dark: "#705746",
@@ -52,28 +53,14 @@ function noEvent(event){
 }
 
 function filterAndShowNames(filterWord) {
+    filterWordTemporary = filterWord;
     if (filterWord.length >= 3) {
         currentNames = pokeArray.filter(pokemon => pokemon.Name.includes(filterWord));
-        
     }
-    else if (filterWord.length == 0) {
+    else if (filterWord.length < 3) {
         currentNames = pokeArray;
-        
     }
-}
-
-function showSearchedNames(event) {
-    const input = document.getElementById("searchBar");
-    event.preventDefault();
-    const filterWord = input.value.trim();
-    if (filterWord.length >= 3) {
-        currentNames = pokeArray.filter(pokemon => pokemon.Name.includes(filterWord));
-        renderSmallCard(currentNames);
-    }
-    else if (filterWord.length == 0) {
-        currentNames = pokeArray;
-        renderSmallCard(currentNames);
-    }
+    renderSmallCard(currentNames);
 }
 
 function showLoadingSpinner(){

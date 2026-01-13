@@ -115,9 +115,35 @@ dialog::backdrop {
 }
 
 .breeding {
-    width: 200px;
+    width: 80%;
     padding-left: 30px;
     bottom: 0;
+}
+
+.breeding p {
+    display: flex;
+}
+
+.evo{
+    padding-left: 15px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.evoLine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    width: 130px;
+    display: inline-block;
 }
 
 .dialogContent footer {
@@ -135,8 +161,30 @@ dialog::backdrop {
 
 .dialogContent footer button {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border: none;  
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dialogContent footer button:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+#left_button {
+    background-image: url(/assets/icons/icons8-eingekreistes-rangabzeichen-links-30.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+#right_button {
+    background-image: url(/assets/icons/icons8-eingekreistes-rangabzeichen-rechts-30.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
 }
 
 @media(max-width: 410px) {

@@ -1,0 +1,68 @@
+.padding {
+    padding: 0 4%;
+}
+
+.privacySection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    color: white;
+}
+
+.privacySection a{
+    color: white;
+}
+
+.privacySection a:link{
+    color: white;
+}
+
+.privacySection a:hover{
+    color: green;
+}
+
+.privacy{
+    width: calc(100% - 100px);
+}
+
+@media(max-width: 950px) {
+    .padding {
+        padding: 0 6%;
+    }
+}
+
+@media(max-width: 650px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px; 
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 500px) {
+
+}
+
+@media(max-width: 450px){
+    .privacy{
+        width: calc(100% - 20px);
+    }
+}
+
+@media(max-width: 400px) {
+    .padding {
+        padding: 0 10%;
+    }
+}
